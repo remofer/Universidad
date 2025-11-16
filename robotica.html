@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica en el Mundo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .robot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .robot-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .robot-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .robot-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .robot-item h3 {
+            color: #495057;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            background-color: #667eea;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #5568d3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .info-box {
+            background-color: #e7f3ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .robot-image {
+            max-width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin: 1rem auto;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        #contador {
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: bold;
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🤖 Robótica en el Mundo</h1>
+        <p>Explorando el futuro de la tecnología y la automatización</p>
+    </header>
+
+    <div class="container">
+        <!-- Sección de Introducción -->
+        <div class="card">
+            <h2>¿Qué es la Robótica?</h2>
+            <p>La robótica es la rama de la ingeniería que combina mecánica, electrónica e informática para diseñar, construir y operar robots. Estos sistemas automatizados están transformando industrias enteras y mejorando la calidad de vida humana.</p>
+
+            <div class="image-container">
+                <div class="robot-image">
+                    🤖 ROBÓTICA
+                </div>
+            </div>
+
+            <button class="btn" onclick="toggleInfo()">Más Información</button>
+
+            <div id="extraInfo" class="info-box hidden">
+                <strong>Dato interesante:</strong> Se estima que para 2030, habrá más de 20 millones de robots industriales en operación en todo el mundo.
+            </div>
+        </div>
+
+        <!-- Sección de Tipos de Robots -->
+        <div class="card">
+            <h2>Tipos de Robots en el Mundo</h2>
+            <div class="robot-grid">
+                <div class="robot-item">
+                    <div class="robot-icon">🏭</div>
+                    <h3>Robots Industriales</h3>
+                    <p>Automatización de procesos de manufactura y ensamblaje.</p>
+                </div>
+                <div class="robot-item">
+                    <div class="robot-icon">🏥</div>
+                    <h3>Robots Médicos</h3>
+                    <p>Cirugías de precisión y asistencia hospitalaria.</p>
+                </div>
+                <div class="robot-item">
+                    <div class="robot-icon">🏠</div>
+                    <h3>Robots Domésticos</h3>
+                    <p>Limpieza y asistencia en el hogar.</p>
+                </div>
+                <div class="robot-item">
+                    <div class="robot-icon">🚗</div>
+                    <h3>Robots Autónomos</h3>
+                    <p>Vehículos sin conductor y drones.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Interactiva -->
+        <div class="card">
+            <h2>Interacción con Robots</h2>
+            <p>Los robots están cada vez más presentes en nuestra vida diaria. ¡Prueba esta interacción simple!</p>
+
+            <div id="contador">Clicks: 0</div>
+            <button class="btn" onclick="incrementarContador()">Click aquí para simular interacción con robot</button>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn" onclick="cambiarColor()">Cambiar Color de Fondo</button>
+            </div>
+        </div>
+
+        <!-- Sección de Aplicaciones -->
+        <div class="card">
+            <h2>Aplicaciones de la Robótica</h2>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li><strong>Industria Manufacturera:</strong> Ensamblaje automatizado de productos</li>
+                <li><strong>Medicina:</strong> Cirugías robóticas y rehabilitación</li>
+                <li><strong>Exploración Espacial:</strong> Rovers en Marte y satélites</li>
+                <li><strong>Agricultura:</strong> Cosecha automatizada y monitoreo de cultivos</li>
+                <li><strong>Educación:</strong> Robots educativos para enseñanza de programación</li>
+                <li><strong>Rescate:</strong> Búsqueda y rescate en zonas peligrosas</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - Robótica en el Mundo | Trabajo Universitario</p>
+        <p><strong>Estudiante:</strong> Remo Villarreal | <strong>CI:</strong> 26564411</p>
+        <p>Tecnología que transforma el futuro</p>
+    </footer>
+
+    <script>
+        // Variable para contador
+        let clicks = 0;
+
+        // Función para mostrar/ocultar información
+        function toggleInfo() {
+            const extraInfo = document.getElementById('extraInfo');
+            if (extraInfo.classList.contains('hidden')) {
+                extraInfo.classList.remove('hidden');
+            } else {
+                extraInfo.classList.add('hidden');
+            }
+        }
+
+        // Función para incrementar contador
+        function incrementarContador() {
+            clicks++;
+            document.getElementById('contador').textContent = 'Clicks: ' + clicks;
+
+            // Mensajes aleatorios del robot
+            const mensajes = [
+                '¡Beep boop! Interacción registrada',
+                '🤖 Robot activado',
+                '¡Procesando datos!',
+                '¡Sistema operativo al 100%!'
+            ];
+
+            if (clicks % 5 === 0) {
+                const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
+                alert(mensaje);
+            }
+        }
+
+        // Función para cambiar color de fondo
+        function cambiarColor() {
+            const colores = [
+                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+                'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+            ];
+
+            const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+            document.body.style.background = colorAleatorio;
+        }
+
+        // Animación de entrada
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.5s ease';
+
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
